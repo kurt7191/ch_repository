@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberns">
+	<!-- Use type aliases to avoid typing the full classname every time. -->
+	<resultMap id="memberResult" type="member">
+		<result property="m_id" column="m_id" />
+		<result property="password" column="password" />
+		<result property="intro" column="intro" />
+		<result property="email" column="email" />
+		<result property="name" column="name" />
+		<result property="birthday" column="birthday" />
+		<result property="question" column="question" />
+		<result property="lastDate" column="lastDate" />
+		<result property="vsyn" column="vsyn" />
+		<result property="coin" column="coin" />
+		<result property="heart" column="heart" />
+	</resultMap>
+	
+	<select id="confirmId" parameterType="String" resultType="member">
+		select * from member where m_id = #{m_id}
+	</select>
+	
+	<insert id="createMeber" parameterType="member">
+		insert into member values (#{m_id}, #{password}, #{intro}, #{email}, #{name}, #{birthday}, #{question}, sysdate, 0, 200, 20)
+	</insert>
+	
+	<select id="loginChk" parameterType="String" resultType="member">
+		select * from member where m_id = #{m_id}
+	</select>
+	
+	<select id="findId" parameterType="Map" resultType="member">
+		select * from member where name = #{name} and birthday = #{birthday}
+	</select>
+	
+	<select id="findPw" parameterType="String" resultType="member">
+		select * from member where m_id = #{m_id} 
+	</select>
+	
+	<select id="getMember" parameterType="String" resultType="member">
+		select * from member where m_id = #{m_id} 
+	</select>
+	
+	<update id="myInfoUpdate" parameterType="member">
+		update member set password = #{password}, email = #{email}, name = #{name}, birthday = #{birthday}, question = {question}, intro = #{intro} where m_id = #{m_id}
+	</update>
+	
+	<select id="memberList" parameterType="String" resultType="member">
+		select * from member where m_id = #{m_id}
+	</select>
+	
+	<update id="heartUse" parameterType="String">
+		update member set heart = heart-1 where m_id = #{m_id}
+	</update>
+	
+	<update id="coinUpdate" parameterType="String">
+		update member set coin = #{coin} where m_id = #{m_id}
+	</update>
+</mapper>

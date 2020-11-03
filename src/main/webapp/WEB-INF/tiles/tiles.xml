@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="tilesbase" template="/WEB-INF/views/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/views/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/views/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+	</definition>
+	<definition name="singleInfo" template="/WEB-INF/views/singleGame/gameInfo.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	<definition name="buyInfo" template="/WEB-INF/views/gameBuy/gameBuyInfo.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	<definition name="his" template="/WEB-INF/views/information/hisInfo.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	<definition name="singleGameScore" template="/WEB-INF/views/scoreList/gameScore.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	<definition name="sg1" template="/WEB-INF/views/singleGame/singleGame1.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	<definition name="sg2" template="/WEB-INF/views/singleGame/singleGame2.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	<definition name="sg3" template="/WEB-INF/views/singleGame/singleGame3.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	
+	<definition name="start" extends="tilesbase">
+		<put-attribute name="title" value="start.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/start.jsp" />
+	</definition>
+	<definition name="main" extends="tilesbase">
+		<put-attribute name="title" value="main.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/main.jsp" />
+	</definition>
+	<definition name="joinForm" extends="tilesbase">
+		<put-attribute name="title" value="joinForm.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/join/joinForm.jsp" />
+	</definition>
+	<definition name="confirm" extends="tilesbase">
+		<put-attribute name="title" value="confirm.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/join/confirm.jsp" />
+	</definition>
+	<definition name="loginForm" extends="tilesbase">
+		<put-attribute name="title" value="loginForm.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/login/loginForm.jsp" />
+	</definition>
+	<definition name="login" extends="tilesbase">
+		<put-attribute name="title" value="login.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/login/login.jsp" />
+	</definition>
+	<definition name="findIdForm" extends="tilesbase">
+		<put-attribute name="title" value="findIdForm.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/login/findIdForm.jsp" />
+	</definition>
+	<definition name="findId" extends="tilesbase">
+		<put-attribute name="title" value="findId.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/login/findId.jsp" />
+	</definition>
+	<definition name="findPwForm" extends="tilesbase">
+		<put-attribute name="title" value="findPwForm.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/login/findPwForm.jsp" />
+	</definition>
+	<definition name="findPw" extends="tilesbase">
+		<put-attribute name="title" value="findPw.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/login/findPw.jsp" />
+	</definition>
+	<definition name="myInfoUpdateForm" extends="tilesbase">
+		<put-attribute name="title" value="myInfoUpdateForm.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/information/myInfoUpdateForm.jsp" />
+	</definition>
+	<definition name="singleGameList" extends="tilesbase">
+		<put-attribute name="title" value="singleGameList.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/singleGame/singleGameList.jsp" />
+	</definition>
+	<definition name="singleGameMsg" extends="tilesbase">
+		<put-attribute name="title" value="singleGameMsg.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/singleGame/singleGameMsg.jsp" />
+	</definition>
+	<definition name="multyGameMsg" extends="tilesbase">
+		<put-attribute name="title" value="multyGameMsg.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/multyGame/multyGameMsg.jsp" />
+	</definition>
+	<definition name="singleGameResult" extends="tilesbase">
+		<put-attribute name="title" value="singleGameResult.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/singleGame/singleGameResult.jsp" />
+	</definition>
+	<definition name="gameBuyList" extends="tilesbase">
+		<put-attribute name="title" value="gameBuyList.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/gameBuy/gameBuyList.jsp" />
+	</definition>
+	<definition name="gameBuyMsg" extends="tilesbase">
+		<put-attribute name="title" value="gameBuyMsg.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/gameBuy/gameBuyMsg.jsp" />
+	</definition>
+	<definition name="gameScoreList" extends="tilesbase">
+		<put-attribute name="title" value="gameBuyList.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/scoreList/gameScoreList.jsp" />
+	</definition>
+	<definition name="waitRoom" extends="tilesbase">
+		<put-attribute name="title" value="waitRoom.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/waitingRoom/waitRoom.jsp" />
+	</definition>
+	<definition name="multyGameList" extends="tilesbase">
+		<put-attribute name="title" value="multyGameList.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/multyGame/multyGameList.jsp" />
+	</definition>
+	<definition name="matchWith" extends="tilesbase">
+		<put-attribute name="title" value="matchWith.jsp 보는중" />
+		<put-attribute name="body" value="/WEB-INF/views/multyGame/matchWith.jsp" />
+	</definition>
+
+	<definition name="gameInfo" extends="singleInfo">
+		<put-attribute name="body" value="/WEB-INF/views/singleGame/gameInfo.jsp" />
+	</definition>
+	<definition name="gameBuyInfo" extends="buyInfo">
+		<put-attribute name="body" value="/WEB-INF/views/gameBuy/gameBuyInfo.jsp" />
+	</definition>
+	<definition name="hisInfo" extends="his">
+		<put-attribute name="body" value="/WEB-INF/views/information/hisInfo.jsp" />
+	</definition>
+	<definition name="gameScore" extends="singleGameScore">
+		<put-attribute name="body" value="/WEB-INF/views/scoreList/gameScore.jsp" />
+	</definition>
+	<definition name="singleGame1" extends="sg1">
+		<put-attribute name="body" value="/WEB-INF/views/singleGame/singleGame1.jsp" />
+	</definition>
+	<definition name="singleGame2" extends="sg2">
+		<put-attribute name="body" value="/WEB-INF/views/singleGame/singleGame2.jsp" />
+	</definition>
+	<definition name="singleGame3" extends="sg3">
+		<put-attribute name="body" value="/WEB-INF/views/singleGame/singleGame3.jsp" />
+	</definition>
+	
+</tiles-definitions>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="scoretablens">
+	<!-- Use type aliases to avoid typing the full classname every time. -->
+	<resultMap id="scoretableResult" type="scoretable">
+		<result property="m_id" column="m_id" />
+		<result property="c_id" column="c_id" />
+		<result property="score" column="score" />
+		<result property="highScore" column="highScore" />
+		<result property="scoreAve" column="scoreAve" />
+		<result property="scoreCnt" column="scoreCnt" />
+		<result property="win" column="win" />
+		<result property="lose" column="lose" />
+		<result property="draw" column="draw" />
+		<result property="rate" column="rate" />
+		<result property="rank" column="rank" />
+	</resultMap>
+	
+	<insert id="scoreInsert" parameterType="Map">
+		insert into scoretable values (#{m_id}, #{c_id}, 999999, 999999, 999999, 0, 0, 0, 0, 0)
+	</insert>
+	
+	<select id="scoreList" parameterType="String" resultMap="scoretableResult">
+		select * from scoretable where c_id = #{c_id} and scoreCnt > 0 order by scoreAve
+	</select>
+	
+	<select id="getScoretable" parameterType="Map" resultType="scoretable">
+		select * from scoretable where m_id = #{m_id} and c_id = #{c_id}
+	</select>
+	
+	<update id="singleGameScoreUpdate" parameterType="scoretable">
+		update scoretable set score = #{score}, highScore = #{highScore}, scoreAve = #{scoreAve}, scoreCnt = #{scoreCnt} where m_id = #{m_id} and c_id = #{c_id}
+	</update>
+	
+	<select id="hisRank" parameterType="String" resultMap="scoretableResult">
+		select c_id, highScore, scoreCnt, rank from ( select m_id, score, c_id, highScore, scoreCnt, rank() over(partition by c_id order by score)rank from scoretable) where m_id = #{m_id}
+	</select>
+	
+	<select id="scoreRankOne" parameterType="String" resultType="scoretable">
+		select * from scoretable where scoreave in (select min(scoreave) from scoretable group by c_id) and c_id = #{c_id}
+	</select>
+	
+	<select id="myScoreInfo" parameterType="Map" resultType="scoretable">
+		select * from scoretable where m_id = #{m_id} and c_id = #{c_id}
+	</select>
+	
+</mapper>

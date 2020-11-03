@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 경로 다 맞춰서 써야함 -->
+	<properties resource="mybatis/jdbc.properties" />
+	<typeAliases>
+		<typeAlias alias="member" type="model.Member" />
+		<typeAlias alias="contents" type="model.Contents" />
+		<typeAlias alias="scoretable" type="model.Scoretable" />
+		<typeAlias alias="buy" type="model.Buy" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="mybatis/Member.xml" />
+		<mapper resource="mybatis/Contents.xml" />
+		<mapper resource="mybatis/Scoretable.xml" />
+		<mapper resource="mybatis/Buy.xml" />
+	</mappers>
+</configuration>
