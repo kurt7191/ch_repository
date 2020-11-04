@@ -10,11 +10,10 @@
 	<div align="center">
 		<a href="main.html"><img src="images/logo.jpg" width="212px"></a>
 	</div>
-	<div class = "container" id = "body" align = "center">
-	</div>
-	<div class = "container" id = "footer" align = "center">
-	</div>
-
+	
+<div>
+<!-- 여기에 네비 넣어라 -->
+</div>
 
 </body>
 </html>
