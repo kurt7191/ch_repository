@@ -2,5 +2,14 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+   <typeAliases>
+      <typeAlias alias="member" type="com.ch.project.model.Member"/>
+	  <typeAlias alias="pet" type="com.ch.project.model.Pet"/>
+   </typeAliases>
+
+<mappers>
+      <mapper   resource="member.xml" />
+      <mapper   resource="mypage.xml" />
+   </mappers>
 
 </configuration>

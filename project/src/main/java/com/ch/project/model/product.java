@@ -7,14 +7,14 @@ import lombok.Data;
 @Data
 public class product {
 
-	private int pNum;
-	private String PCompany;
-	private String pName;
-	private int pPrice;
-	private int pQuantity;
-	private Date pRegDate;
-	private String pColor;
-	
+	private int p_Num;
+	private String P_Company;
+	private String p_Name;
+	private int p_Price;
+	private int p_Quantity;
+	private Date p_RegDate;
+	private String p_Color;
+	private String p_pcName;
 	
 	
 }

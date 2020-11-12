@@ -6,9 +6,9 @@ import lombok.Data;
 public class Pet {
 
 	private int petNumber;
-	private String petName;
-	private String petSex;
-	private String petType;
-	private int petAge;
+	private String pet_name;
+	private String pet_sex;
+	private String pet_type;
+	private int pet_age;
 	
 }

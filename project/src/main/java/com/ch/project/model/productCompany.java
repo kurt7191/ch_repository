@@ -7,7 +7,7 @@ public class productCompany {
 
 	private String pcName;
 	private String pcAddress;
-	private String phoneNumber;
+	private String pcPhoneNumber;
 	
 	
 }
