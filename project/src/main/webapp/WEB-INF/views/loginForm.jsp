@@ -37,12 +37,42 @@ li a.current {
 	background-color: #FF6347;
 	color: white;
 }
+li
+ 
+a
+:hover
+:not
+ 
+(
+.current
+ 
+)
+{
+background-color
+:
+ 
+#CD853F
+;
 
-li a:hover:not (.current ) {
-	background-color: #CD853F;
-	color: white;
+	
+color
+:
+ 
+white
+;
+
+
 }
 </style>
+<script type="text/javascript">
+	function sessionChk() {
+		alert('로그인을 해주세요.');
+		
+	}
+	function alreadyLogin() {
+		alert('이미 로그인 되어 있습니다.')
+	}
+</script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -61,8 +91,22 @@ li a:hover:not (.current ) {
 			<li><a href="PBview">기기구매</a></li>
 			<li><a href="">게시판</a></li>
 			<li><a href="">고객센터</a></li>
-			<li><a href="mypage.do">마이페이지</a></li>
-			<li><a href="joinForm.do">회원가입</a></li>
+			<li><c:choose>
+					<c:when test="${not empty cId }">
+						<a href="mypage.do">마이페이지</a>
+					</c:when>
+					<c:when test="${empty cId }">
+						<a onclick="sessionChk()" href="loginForm.do">마이페이지</a>
+					</c:when>
+				</c:choose></li>
+			<li><c:choose>
+					<c:when test="${empty cId }">
+						<a href="joinForm.do">회원가입</a>
+					</c:when>
+					<c:when test="${not empty cId }">
+						<a href="main.do" onclick="alreadyLogin()">회원가입</a>
+					</c:when>
+				</c:choose></li>
 			<li><c:choose>
 					<c:when test="${not empty cId }">
 						<a href="logout.do">로그아읏</a>
@@ -80,7 +124,7 @@ li a:hover:not (.current ) {
 			<table class="table table-striped">
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="c_id" required="required"
+					<td><input type="text" name="id" required="required"
 						autofocus="autofocus"></td>
 				</tr>
 				<tr>

@@ -19,9 +19,9 @@ public class LoginController {
 	
 	@RequestMapping(value = "idChk", produces = "text/html;charset=utf-8" )
 	@ResponseBody // 결과를 jsp 로 보여주지 말고 바로 문장을 전달
-	public String idChk(String c_id) {
+	public String idChk(String id) {
 		String msg = "";
-		Member member = ls.select(c_id);
+		Member member = ls.select(id);
 		if(member == null) msg = "사용 가능한 아이디 입니다.";
 		else msg = "이미 존재하는 아이디 입니다. 다른 아이디를 사용하세요";
 		
@@ -35,7 +35,7 @@ public class LoginController {
 	@RequestMapping("join")
 	public String join(Member member, Model model, HttpSession session) {
 		int result = 0;
-		System.out.println("cId = "+member.getId());
+		System.out.println("email="+member.getEmail());
 		Member mem = ls.select(member.getId());
 		if(mem == null){
 			result = ls.insert(member);

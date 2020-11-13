@@ -12,7 +12,7 @@ public class MypageDaoImpl implements MypageDao{
 @Autowired
 	private SqlSessionTemplate sst;
 
-@Override
+
 public Member select(String cId) {
 	
 	
@@ -28,5 +28,19 @@ public int insert(Pet pet) {
 	
 	return sst.insert("mypagens.insert", pet);
 }
+
+
+public int update(Member member) {
+	
+	return sst.update("mypagens.update", member);
+}
+
+
+public int delete(String cId) {
+	
+	return sst.delete("mypagens.delete", cId);
+}
+
+
 
 }

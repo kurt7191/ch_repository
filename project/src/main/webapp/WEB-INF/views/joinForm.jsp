@@ -45,16 +45,24 @@ li a:hover:not(.current) {
 <title>Insert title here</title>
 <script type="text/javascript">
 function idchk() {
-	if(!frm.c_id.value){
+	if(!frm.id.value){
 		alert('아이디를 입력해주세요!')
-		frm.c_id.focus(); return false;
+		frm.id.focus(); return false;
 	}
-	$.post('idChk.do', 'id='+frm.c_id.value, function(data) {
+	$.post('idChk.do', 'id='+frm.id.value, function(data) {
 		$('#disp').html(data);
 	})
 	
 }
 	
+</script>
+<script type="text/javascript">
+	function sessionChk() {
+		alert('로그인을 해주세요.');
+	}
+	function alreadyLogin() {
+		alert('이미 로그인 되어 있습니다.')
+	}
 </script>
 </head>
 <body>
@@ -68,11 +76,29 @@ function idchk() {
          <!-- Links -->
          <ul>
             <li><a href="main.do">Home</a></li>
-            <li><a href="PBview">기기구매</a></li>
+            <li><a href="PBview.do">기기구매</a></li>
             <li><a href="">게시판</a></li>
             <li><a href="">고객센터</a></li>
-            <li><a href="">마이페이지</a></li>
-            <li><a href="">회원가입</a></li>
+               <li>
+			<c:choose>
+				<c:when test="${not empty cId }">
+					<a href = "mypage.do">마이페이지</a>
+				</c:when>
+				<c:when test="${empty cId }">
+					<a onclick = "sessionChk()" href = "loginForm.do" >마이페이지</a>
+				</c:when>
+			</c:choose>
+			</li>
+           <li>
+            <c:choose>
+            <c:when test="${empty cId }">
+            	<a href = "joinForm.do">회원가입</a>
+            </c:when>
+            <c:when test="${not empty cId }">
+            	<a href = "main.do" onclick = "alreadyLogin()">회원가입</a>
+            </c:when>
+            </c:choose>
+            </li>
             <li><c:choose>
                   <c:when test="${not empty cId }">
                      <a href="logout.do">로그아읏</a>
@@ -91,7 +117,7 @@ function idchk() {
 			<table class="table table-hover">
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="c_id" required="required"
+					<td><input type="text" name="id" required="required"
 						autofocus="autofocus"><input type = "button" onclick = "idchk()" value = "중복체크">
 						<div id = "disp" class = "err"></div></td>
 				</tr>
@@ -103,21 +129,29 @@ function idchk() {
 					<td>이름</td>
 					<td><input type="text" name="name" required="required"></td>
 				</tr>
+				
+				
+				
 				<tr>
-					<td>성별</td>
-					<td><input type="text" name="sex" required="required"></td>
+					<td>성별</td><td><input type="radio" name="sex" required="required" value = "m">
+					<label for = "man">남자</label>
+					<input type = "radio" name = "sex" required="required" value = "w">
+					<label for = "woman">여자</label></td>
 				</tr>
+				
+				
+				
 				<tr>
 					<td>주소</td>
 					<td><input type="text" name="address" required="required"></td>
 				</tr>
 				<tr>
 					<td>이메일</td>
-					<td><input type="email" name="email" required="required"></td>
+					<td><input type="text" name="email" required="required">@<input type = "text" name = "email" required="required"></td>
 				</tr>
 				<tr>
 					<td>전화번호</td>
-					<td><input type="text" name="phoneNumber" required="required"></td>
+					<td><input type="text" name="phoneNumber" required="required" size = "4">-<input type="text" name="phoneNumber" required="required" size = "4">-<input type="text" name="phoneNumber" required="required" size = "4"></td>
 				</tr>
 				<tr><td colspan = "2" align = "center"><input type = "submit"></td></tr>
 			</table>

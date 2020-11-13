@@ -1,5 +1,7 @@
 package com.ch.project.model;
 
+import java.sql.Date;
+
 import lombok.Data;
 
 @Data
@@ -12,7 +14,7 @@ public class Member {
 	private String address;
 	private String email;
 	private String phoneNumber;
-	private String joindate;
+	private Date joindate;
 	private String del;
 	
 	

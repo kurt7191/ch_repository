@@ -14,6 +14,15 @@
 
 </insert>
 
+<update id = "update" parameterType="member">
+	update pj_customer set password = #{password}
+	, name = #{name}, sex = #{sex}, address=#{address}, email=#{email}
+	,phoneNumber=#{phoneNumber},joindate = sysdate ,del = 'n'
+</update>
+<delete id="delete" parameterType="string">
+	delete from pj_customer where id = #{cId}
+</delete>
+
 </mapper>
 
 

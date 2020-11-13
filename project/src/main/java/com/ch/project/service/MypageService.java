@@ -11,4 +11,8 @@ public interface MypageService {
 
 	int insert(Pet pet);
 
+	int update(Member member);
+
+	int delete(String cId);
+
 }

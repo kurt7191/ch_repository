@@ -8,6 +8,12 @@
 <insert id="insert" parameterType="member">
 insert into pj_customer values(#{id}, #{password},#{name},#{sex},#{address},#{email},#{phoneNumber}, sysdate,'n')
 </insert>
+<update id = "update" parameterType="member">
+	update pj_customer set id =#{id}, password = #{password}
+	, name = #{name}, sex = #{sex}, address=#{address}, email=#{email}
+	,phoneNumber=#{phoneNumber},sysdate,'n'
+</update>
+
 </mapper>
 
 

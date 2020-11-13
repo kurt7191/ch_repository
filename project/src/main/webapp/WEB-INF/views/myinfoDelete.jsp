@@ -8,23 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+	alert("대박");
 	<c:if test="${result>0 }">
 		<script type="text/javascript">
-			alert("펫 정보 입력 완료")
+			alert('회원탈퇴 완료')
 			location.href = "main.do"
 		</script>
 	</c:if>
 
-	<c:if test="${result == 0 }">
+	<c:if test="${result==0 }">
 		<script type="text/javascript">
-			alert("펫 정보 입력을 실패하셨습니다.")
-			history.go(-1)
-		</script>
-	</c:if>
-
-	<c:if test="${result == -1 }">
-		<script type="text/javascript">
-			alert("펫 넘버가 이미 존재합니다.")
+			alert('회원탈퇴 실패하셨습니다')
 			history.go(-1)
 		</script>
 	</c:if>
